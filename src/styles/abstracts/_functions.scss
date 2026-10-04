@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+// Convert pixels to rem
+@function rem($px, $base: 16px) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// Tint a color with white
+@function tint-color($color, $weight) {
+  @return mix(#ffffff, $color, $weight);
+}
+
+// Shade a color with black
+@function shade-color($color, $weight) {
+  @return mix(#000000, $color, $weight);
+}

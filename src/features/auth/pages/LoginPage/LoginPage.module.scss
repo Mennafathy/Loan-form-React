@@ -1,0 +1,107 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.container {
+  min-height: calc(100vh - 140px);
+  @include flex-center;
+  padding: $spacing-xl $spacing-md;
+}
+
+.card {
+  max-width: 440px;
+  width: 100%;
+}
+
+.brandHeader {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: $radius-lg;
+  background: $gradient-primary;
+  color: #ffffff;
+  @include flex-center;
+  margin-bottom: $spacing-md;
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: $color-text-muted;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.demoSection {
+  margin-top: $spacing-xl;
+  padding-top: $spacing-lg;
+  border-top: 1px solid $color-border-subtle;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.demoLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: $color-text-dim;
+  text-align: center;
+  font-weight: 600;
+}
+
+.demoButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.demoBtn {
+  padding: 0.5rem 0.75rem;
+  border-radius: $radius-md;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid $color-border-subtle;
+  color: $color-text-muted;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $color-primary-light;
+    border-color: $color-primary-light;
+    background: $color-primary-subtle;
+  }
+}
+
+.footerLinks {
+  margin-top: $spacing-lg;
+  text-align: center;
+}
+
+.footerLink {
+  font-size: 0.8125rem;
+  color: $color-text-muted;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-text-main;
+  }
+}

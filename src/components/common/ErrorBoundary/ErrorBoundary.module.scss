@@ -1,0 +1,55 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.fallbackContainer {
+  min-height: 50vh;
+  @include flex-center;
+  padding: $spacing-xl;
+}
+
+.card {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  background: $color-bg-surface;
+  border: 1px solid $color-border-subtle;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  box-shadow: $shadow-lg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: $radius-pill;
+  background: $color-danger-subtle;
+  color: $color-danger-light;
+  @include flex-center;
+  margin-bottom: $spacing-md;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: $spacing-xs;
+}
+
+.message {
+  color: $color-text-muted;
+  margin-bottom: $spacing-md;
+}
+
+.errorDetails {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: $spacing-sm;
+  border-radius: $radius-sm;
+  font-family: monospace;
+  font-size: 0.8125rem;
+  color: $color-danger-light;
+  overflow-x: auto;
+  margin-bottom: $spacing-lg;
+  text-align: left;
+}

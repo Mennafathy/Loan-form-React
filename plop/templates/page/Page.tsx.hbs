@@ -1,0 +1,16 @@
+import React from 'react';
+import styles from './{{pascalCase name}}Page.module.scss';
+
+export function {{pascalCase name}}Page() {
+  return (
+    <div className={styles.page}>
+      <header className={styles.header}>
+        <h1 className={styles.title}>{{pascalCase name}}</h1>
+        <p className={styles.subtitle}>Manage and view {{lowerCase name}} information.</p>
+      </header>
+      <main className={styles.content}>
+        <p>Welcome to the {{pascalCase name}} page.</p>
+      </main>
+    </div>
+  );
+}

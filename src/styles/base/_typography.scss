@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as *;
+
+body {
+  font-family: $font-sans;
+  font-size: 1rem;
+  color: $color-text-main;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: $color-text-main;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 3.25rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  @media (min-width: $breakpoint-md) {
+    font-size: 2.25rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  color: $color-text-muted;
+  line-height: 1.6;
+}
+
+.text-gradient {
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

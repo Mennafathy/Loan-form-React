@@ -1,0 +1,8 @@
+export interface {{pascalCase name}} {
+  id: string;
+  name?: string;
+  createdAt: string;
+  updatedAt?: string;
+}
+
+export type {{pascalCase name}}CreateInput = Omit<{{pascalCase name}}, 'id' | 'createdAt'>;

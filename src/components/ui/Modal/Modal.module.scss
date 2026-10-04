@@ -1,0 +1,93 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  @include flex-center;
+  padding: $spacing-md;
+  animation: fadeIn $transition-fast ease-out;
+}
+
+.container {
+  width: 100%;
+  background: $color-bg-surface;
+  border: 1px solid $color-border-medium;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  animation: slideUp $transition-smooth ease-out;
+  overflow: hidden;
+}
+
+.sm {
+  max-width: 420px;
+}
+
+.md {
+  max-width: 580px;
+}
+
+.lg {
+  max-width: 800px;
+}
+
+.header {
+  @include flex-between;
+  padding: $spacing-lg;
+  border-bottom: 1px solid $color-border-subtle;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $color-text-main;
+}
+
+.closeBtn {
+  color: $color-text-muted;
+  padding: 0.25rem;
+  border-radius: $radius-sm;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $color-text-main;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.body {
+  padding: $spacing-lg;
+  overflow-y: auto;
+  color: $color-text-muted;
+}
+
+.footer {
+  @include flex-between;
+  padding: $spacing-md $spacing-lg;
+  border-top: 1px solid $color-border-subtle;
+  background: rgba(0, 0, 0, 0.15);
+  gap: $spacing-md;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

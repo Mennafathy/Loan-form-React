@@ -1,0 +1,23 @@
+import { useState, useCallback } from 'react';
+
+export function {{camelCase name}}() {
+  const [data, setData] = useState<unknown>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  const reset = useCallback(() => {
+    setData(null);
+    setLoading(false);
+    setError(null);
+  }, []);
+
+  return {
+    data,
+    loading,
+    error,
+    setData,
+    setLoading,
+    setError,
+    reset,
+  };
+}

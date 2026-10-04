@@ -1,0 +1,15 @@
+import { apiClient } from '@/services/api/apiClient';
+
+export const {{camelCase name}} = {
+  getAll() {
+    return apiClient.get('/{{kebabCase name}}');
+  },
+
+  getById(id: string | number) {
+    return apiClient.get(`/{{kebabCase name}}/${id}`);
+  },
+
+  create(payload: unknown) {
+    return apiClient.post('/{{kebabCase name}}', payload);
+  },
+};

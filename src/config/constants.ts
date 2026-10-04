@@ -1,0 +1,27 @@
+export const LOAN_CONSTANTS = {
+  MIN_AMOUNT: 1000,
+  MAX_AMOUNT: 100000,
+  DEFAULT_AMOUNT: 25000,
+  AMOUNT_STEP: 500,
+
+  MIN_TERM_MONTHS: 6,
+  MAX_TERM_MONTHS: 84,
+  DEFAULT_TERM_MONTHS: 36,
+  TERM_OPTIONS: [12, 24, 36, 48, 60, 72, 84] as const,
+
+  BASE_INTEREST_RATE: 5.99, // percentage APR
+  CREDIT_SCORE_EXCELLENT_RATE: 4.49,
+  CREDIT_SCORE_GOOD_RATE: 5.99,
+  CREDIT_SCORE_FAIR_RATE: 8.49,
+  CREDIT_SCORE_POOR_RATE: 12.99,
+
+  MIN_ANNUAL_INCOME: 15000,
+};
+
+export const STORAGE_KEYS = {
+  AUTH_TOKEN: 'loanflow_token',
+  USER_DATA: 'loanflow_user',
+  LOAN_DRAFT: 'loanflow_draft_app',
+  APPLICATIONS: 'loanflow_applications_db',
+  THEME_MODE: 'loanflow_theme',
+};

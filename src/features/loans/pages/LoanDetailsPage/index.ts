@@ -1,0 +1,1 @@
+export { LoanDetailsPage } from './LoanDetailsPage';

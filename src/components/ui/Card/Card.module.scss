@@ -1,0 +1,79 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.card {
+  position: relative;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: all $transition-base;
+}
+
+.default {
+  background: $color-bg-surface;
+  border: 1px solid $color-border-subtle;
+  box-shadow: $shadow-md;
+}
+
+.glass {
+  @include glass-panel;
+}
+
+.bordered {
+  background: transparent;
+  border: 1px solid $color-border-medium;
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.padding-sm {
+  padding: $spacing-sm;
+}
+
+.padding-md {
+  padding: $spacing-lg;
+}
+
+.padding-lg {
+  padding: $spacing-xl;
+}
+
+.header {
+  @include flex-between;
+  margin-bottom: $spacing-md;
+  gap: $spacing-md;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: $color-text-main;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: $color-text-muted;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.body {
+  position: relative;
+}
+
+.footer {
+  margin-top: $spacing-lg;
+  padding-top: $spacing-md;
+  border-top: 1px solid $color-border-subtle;
+}

@@ -1,0 +1,68 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.statsCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topRow {
+  @include flex-between;
+  margin-bottom: $spacing-xs;
+}
+
+.title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: $color-text-muted;
+}
+
+.iconCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-md;
+  background: $color-primary-subtle;
+  color: $color-primary-light;
+  @include flex-center;
+}
+
+.valueRow {
+  margin: 0.25rem 0 0.5rem;
+}
+
+.value {
+  font-family: $font-heading;
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.footerRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.trend {
+  font-weight: 600;
+  padding: 0.125rem 0.375rem;
+  border-radius: $radius-sm;
+}
+
+.positive {
+  color: $color-success-light;
+  background: $color-success-subtle;
+}
+
+.negative {
+  color: $color-danger-light;
+  background: $color-danger-subtle;
+}
+
+.subtitle {
+  color: $color-text-dim;
+}

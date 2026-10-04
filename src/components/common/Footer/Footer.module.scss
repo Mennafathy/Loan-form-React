@@ -1,0 +1,134 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.footer {
+  margin-top: auto;
+  background: #090d15;
+  border-top: 1px solid $color-border-subtle;
+  padding: $spacing-xxl 0 $spacing-lg;
+  width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-xxl;
+
+  @include respond-to('md') {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brandIcon {
+  color: $color-accent;
+}
+
+.brandName {
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.tagline {
+  font-size: 0.875rem;
+  color: $color-text-muted;
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+.securityBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: $radius-pill;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid $color-border-subtle;
+  font-size: 0.75rem;
+  color: $color-text-muted;
+}
+
+.linkCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  a {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-primary-light;
+    }
+  }
+}
+
+.colTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: $color-text-main;
+}
+
+.disclosure {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: $color-text-dim;
+}
+
+.bottom {
+  padding-top: $spacing-lg;
+  border-top: 1px solid $color-border-subtle;
+  @include flex-between;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  color: $color-text-dim;
+
+  @include respond-to('sm') {
+    flex-direction: row;
+  }
+}
+
+.builtWith {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.heart {
+  color: $color-danger-light;
+}

@@ -1,0 +1,158 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.trackerWrapper {
+  width: 100%;
+}
+
+.header {
+  @include flex-between;
+  margin-bottom: $spacing-xl;
+  padding-bottom: $spacing-md;
+  border-bottom: 1px solid $color-border-subtle;
+}
+
+.title {
+  font-size: 1.125rem;
+  color: $color-text-main;
+  font-weight: 700;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: $radius-pill;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badgeApproved {
+  background: $color-success-subtle;
+  color: $color-success-light;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badgeReview {
+  background: $color-warning-subtle;
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badgeAction {
+  background: $color-danger-subtle;
+  color: $color-danger-light;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badgeFunded {
+  background: $color-primary-subtle;
+  color: $color-primary-light;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.badgeSubmitted {
+  background: rgba(255, 255, 255, 0.05);
+  color: $color-text-muted;
+  border: 1px solid $color-border-subtle;
+}
+
+.timelineList {
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 1.25rem;
+  min-height: 70px;
+
+  &:last-child {
+    min-height: auto;
+  }
+}
+
+.nodeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nodeCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: $radius-pill;
+  background: $color-bg-surface-elevated;
+  border: 2px solid $color-border-medium;
+  color: $color-text-dim;
+  @include flex-center;
+  flex-shrink: 0;
+  transition: all $transition-base;
+}
+
+.nodeLine {
+  width: 2px;
+  flex: 1;
+  background: $color-border-subtle;
+  margin: 0.25rem 0;
+}
+
+.completed {
+  .nodeCircle {
+    background: $color-success;
+    border-color: $color-success;
+    color: #ffffff;
+  }
+
+  .nodeLine {
+    background: $color-success;
+  }
+}
+
+.current {
+  .nodeCircle {
+    border-color: $color-primary-light;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+  }
+
+  .innerDot {
+    width: 8px;
+    height: 8px;
+    border-radius: $radius-pill;
+    background: $color-primary-light;
+    animation: pulse 1.5s infinite;
+  }
+}
+
+.content {
+  flex: 1;
+  padding-bottom: $spacing-md;
+}
+
+.eventHeader {
+  @include flex-between;
+  margin-bottom: 0.25rem;
+}
+
+.eventTitle {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: $color-text-main;
+}
+
+.eventTime {
+  font-size: 0.75rem;
+  color: $color-text-dim;
+}
+
+.eventDesc {
+  font-size: 0.8125rem;
+  color: $color-text-muted;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}

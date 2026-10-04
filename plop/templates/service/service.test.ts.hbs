@@ -1,0 +1,10 @@
+import { describe, it, expect } from 'vitest';
+import { {{camelCase name}} } from './{{camelCase name}}';
+
+describe('{{camelCase name}}', () => {
+  it('defines the expected service API methods', () => {
+    expect(typeof {{camelCase name}}.getAll).toBe('function');
+    expect(typeof {{camelCase name}}.getById).toBe('function');
+    expect(typeof {{camelCase name}}.create).toBe('function');
+  });
+});

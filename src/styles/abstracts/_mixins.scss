@@ -1,0 +1,55 @@
+@use './variables' as *;
+
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Glassmorphism card
+@mixin glass-panel {
+  background: $color-bg-glass;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid $color-border-subtle;
+  box-shadow: $shadow-md;
+}
+
+// Flex centering shorthand
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Interactive states
+@mixin interactive-hover {
+  transition: all $transition-base;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Truncate text
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

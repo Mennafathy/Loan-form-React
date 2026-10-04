@@ -1,0 +1,227 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-lg;
+  width: 100%;
+}
+
+.navigationRow {
+  @include flex-between;
+  margin-bottom: $spacing-lg;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $color-text-muted;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-primary-light;
+  }
+}
+
+.submittedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: $color-text-dim;
+}
+
+.header {
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+  padding-bottom: $spacing-lg;
+  border-bottom: 1px solid $color-border-subtle;
+}
+
+.appRef {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $color-accent;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @include respond-to('lg') {
+    grid-template-columns: 1.6fr 1fr;
+  }
+}
+
+.primaryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.secondaryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.trackerCard {
+  width: 100%;
+}
+
+.termsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+
+  @include respond-to('sm') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.termBox {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid $color-border-subtle;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.termLabel {
+  font-size: 0.75rem;
+  color: $color-text-dim;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.termValue {
+  font-family: $font-heading;
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.accentColor {
+  color: $color-accent-light !important;
+}
+
+.breakdownTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding-top: $spacing-md;
+  border-top: 1px solid $color-border-subtle;
+}
+
+.tableRow {
+  @include flex-between;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+
+  strong {
+    color: $color-text-main;
+  }
+}
+
+.totalRow {
+  padding-top: $spacing-sm;
+  margin-top: $spacing-xs;
+  border-top: 1px solid $color-border-subtle;
+  font-size: 1rem;
+
+  span {
+    font-weight: 600;
+    color: $color-text-main;
+  }
+}
+
+.totalValue {
+  font-size: 1.25rem;
+  color: #ffffff !important;
+  font-family: $font-heading;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  font-size: 0.875rem;
+
+  span {
+    font-size: 0.75rem;
+    color: $color-text-dim;
+    text-transform: uppercase;
+  }
+
+  strong {
+    color: $color-text-main;
+    word-break: break-word;
+  }
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+}
+
+.checkDone {
+  color: $color-success-light;
+  flex-shrink: 0;
+}
+
+.checkPending {
+  color: $color-warning;
+  flex-shrink: 0;
+}
+
+.notFoundWrapper {
+  min-height: 50vh;
+  @include flex-center;
+  padding: $spacing-xl;
+}
+
+.notFoundCard {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.notFoundIcon {
+  color: $color-danger-light;
+}

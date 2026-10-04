@@ -1,0 +1,104 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.card {
+  width: 100%;
+}
+
+.tableResponsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+
+  th {
+    padding: $spacing-md;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $color-text-dim;
+    border-bottom: 1px solid $color-border-subtle;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: $spacing-md;
+    color: $color-text-muted;
+    border-bottom: 1px solid $color-border-subtle;
+    white-space: nowrap;
+  }
+}
+
+.tableRow {
+  transition: background $transition-fast;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.refCell strong {
+  color: $color-text-main;
+}
+
+.amountCell {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.rateCell {
+  color: $color-accent-light !important;
+  font-weight: 600;
+}
+
+.dateCell {
+  font-size: 0.8125rem;
+  color: $color-text-dim;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: $radius-pill;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badgeApproved {
+  background: $color-success-subtle;
+  color: $color-success-light;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.badgeReview {
+  background: $color-warning-subtle;
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.badgeSubmitted {
+  background: rgba(255, 255, 255, 0.05);
+  color: $color-text-muted;
+  border: 1px solid $color-border-subtle;
+}
+
+.emptyState {
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-xxl 0;
+  text-align: center;
+  color: $color-text-muted;
+}
+
+.emptyIcon {
+  color: $color-text-dim;
+}

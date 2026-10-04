@@ -1,0 +1,118 @@
+@use '@/styles/abstracts/variables' as *;
+@use '@/styles/abstracts/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid $color-border-subtle;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 $spacing-lg;
+  @include flex-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: $radius-md;
+  background: $gradient-primary;
+  color: #ffffff;
+  @include flex-center;
+  box-shadow: 0 2px 10px rgba(79, 70, 229, 0.4);
+}
+
+.brandName {
+  font-family: $font-heading;
+  font-size: 1.375rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.brandDot {
+  color: $color-accent;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: $radius-md;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: $color-text-muted;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $color-text-main;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &.active {
+    color: $color-primary-light;
+    background: $color-primary-subtle;
+    font-weight: 600;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userProfile {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: $radius-pill;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid $color-border-subtle;
+
+  @include respond-to('sm') {
+    display: flex;
+  }
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: $radius-pill;
+  background: $color-bg-surface-elevated;
+  @include flex-center;
+  color: $color-text-muted;
+}
+
+.userName {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: $color-text-main;
+  padding-right: 0.375rem;
+}

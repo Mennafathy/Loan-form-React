@@ -1,0 +1,44 @@
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+@use './base/reset';
+@use './base/typography';
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: $color-bg-main;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.12) 0px, transparent 50%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg-main;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-border-medium;
+  border-radius: $radius-pill;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $color-primary-light;
+}
